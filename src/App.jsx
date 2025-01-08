@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import myavatar from "./assets/images/my-avatar.png";
 import "./assets/css/style.css";
 import "./App.css";
@@ -9,9 +10,23 @@ import { IoMailOutline, IoCallOutline, IoCalendarOutline, IoLocationOutline, IoL
 // import "./assets/js/script.js";
 
 function App() {
+  const [sidebarActive, setSidebarActive] = useState(false);
+  const [activePage, setActivePage] = useState("about");
+
+  const toggleSidebar = () => {
+    setSidebarActive(!sidebarActive);
+  }
+
+  const handlePageNavigation = (page) => {
+    setActivePage(page);
+    window.scrollTo(0, 0);
+  };
+
+  const pages = ["about", "portfolio", "skills", 'resume'];
+
   return (
     <main>
-      <aside className="sidebar" data-sidebar>
+      <aside className={`sidebar ${sidebarActive ? "active" : ""}`} data-sidebar>
         <div className="sidebar-info">
           <div className="avatar-box">
             <img src={myavatar} alt="Richard hanrick" width="80" />
@@ -25,10 +40,10 @@ function App() {
             <p className="title">Web developer</p>
           </div>
 
-          <button className="info_more-btn" data-sidebar-btn>
+          <button className="info_more-btn" data-sidebar-btn onClick={toggleSidebar}>
             <span>Show Contacts</span>
 
-            <ion-icon><IoChevronDown color={'#ffdb70'}/></ion-icon>
+            <ion-icon><IoChevronDown color={'#ffdb70'} /></ion-icon>
           </button>
         </div>
 
@@ -100,7 +115,7 @@ function App() {
 
             <li className="social-item">
               <a href="https://www.linkedin.com/in/mo-shan-b9628a28b/" target="_blank" className="social-link">
-              <ion-icon><IoLogoLinkedin color={'#d6d6d6b3'} height={"18px"} /></ion-icon>
+                <ion-icon><IoLogoLinkedin color={'#d6d6d6b3'} height={"18px"} /></ion-icon>
               </a>
             </li>
 
@@ -118,41 +133,23 @@ function App() {
 
         <nav className="navbar">
           <ul className="navbar-list">
-            <li className="navbar-item">
-              <button className="navbar-link active" data-nav-link>
-                About
-              </button>
-            </li>
-
-            <li className="navbar-item">
-              <button className="navbar-link" data-nav-link>
-                Resume
-              </button>
-            </li>
-
-            <li className="navbar-item">
-              <button className="navbar-link" data-nav-link>
-                Portfolio
-              </button>
-            </li>
-
-            <li className="navbar-item">
-              <button className="navbar-link" data-nav-link>
-                Blog
-              </button>
-            </li>
-
-            <li className="navbar-item">
-              <button className="navbar-link" data-nav-link>
-                Contact
-              </button>
-            </li>
+            {pages.map((page) => (
+              <li key={page} className="navbar-item">
+                <button
+                  className={`navbar-link ${activePage === page ? "active" : ""}`}
+                  data-nav-link
+                  onClick={() => handlePageNavigation(page)}
+                >
+                  {page.charAt(0).toUpperCase() + page.slice(1)}
+                </button>
+              </li>
+            ))}
           </ul>
         </nav>
 
         {/* About */}
 
-        <article className="about active" data-page="about">
+        <article className={`${activePage === "about" ? "active" : ""}`} >
           <header>
             <h2 className="h2 article-title text-start">About me</h2>
           </header>
@@ -257,405 +254,11 @@ function App() {
             </ul>
           </section>
 
-          {/* Testimonials */}
-
-          <section className="testimonials">
-            <h3 className="h3 testimonials-title">Testimonials</h3>
-
-            <ul className="testimonials-list has-scrollbar">
-              <li className="testimonials-item">
-                <div className="content-card" data-testimonials-item>
-                  <figure className="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-1.png"
-                      alt="Daniel lewis"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    className="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Daniel lewis
-                  </h4>
-
-                  <div className="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="testimonials-item">
-                <div className="content-card" data-testimonials-item>
-                  <figure className="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-2.png"
-                      alt="Jessica miller"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    className="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Jessica miller
-                  </h4>
-
-                  <div className="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="testimonials-item">
-                <div className="content-card" data-testimonials-item>
-                  <figure className="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-3.png"
-                      alt="Emily evans"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    className="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Emily evans
-                  </h4>
-
-                  <div className="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="testimonials-item">
-                <div className="content-card" data-testimonials-item>
-                  <figure className="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-4.png"
-                      alt="Henry william"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    className="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Henry william
-                  </h4>
-
-                  <div className="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          {/* testimonials modal */}
-
-          <div className="modal-container" data-modal-container>
-            <div className="overlay" data-overlay></div>
-
-            <section className="testimonials-modal">
-              <button className="modal-close-btn" data-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-
-              <div className="modal-img-wrapper">
-                <figure className="modal-avatar-box">
-                  <img
-                    src="./assets/images/avatar-1.png"
-                    alt="Daniel lewis"
-                    width="80"
-                    data-modal-img
-                  />
-                </figure>
-
-                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
-              </div>
-
-              <div className="modal-content">
-                <h4 className="h3 modal-title" data-modal-title>
-                  Daniel lewis
-                </h4>
-
-                <time dateTime="2021-06-14">14 June, 2021</time>
-
-                <div data-modal-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were
-                    very pleased with the work done. She has a lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum
-                    dolor sit amet, ullamcous cididt consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels
-                    dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          {/* Clients */}
-
-          <section className="clients">
-            <h3 className="h3 clients-title">Clients</h3>
-
-            <ul className="clients-list has-scrollbar">
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-1-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-2-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-3-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-4-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-5-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li className="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-6-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article>
-
-        {/* RESUME */}
-
-        <article className="resume" data-page="resume">
-          <header>
-            <h2 className="h2 article-title text-start">Resume</h2>
-          </header>
-
-          <section className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 className="h3">Education</h3>
-            </div>
-
-            <ol className="timeline-list">
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">
-                  University school of the arts
-                </h4>
-
-                <span>2007 — 2008</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">New york academy of art</h4>
-
-                <span>2006 — 2007</span>
-
-                <p className="timeline-text">
-                  Ratione voluptatem sequi nesciunt, facere quisquams facere
-                  menda ossimus, omnis voluptas assumenda est omnis..
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">
-                  High school of art and design
-                </h4>
-
-                <span>2002 — 2004</span>
-
-                <p className="timeline-text">
-                  Duis aute irure dolor in reprehenderit in voluptate, quila
-                  voluptas mag odit aut fugit, sed consequuntur magni dolores
-                  eos.
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 className="h3">Experience</h3>
-            </div>
-
-            <ol className="timeline-list">
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Creative director</h4>
-
-                <span>2015 — Present</span>
-
-                <p className="timeline-text">
-                  Nemo enim ipsam voluptatem blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et qvuas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Art director</h4>
-
-                <span>2013 — 2015</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Web designer</h4>
-
-                <span>2010 — 2013</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section className="skill">
-            <h3 className="h3 skills-title">My skills</h3>
-
-            <ul className="skills-list content-card">
-              <li className="skills-item">
-                <div className="title-wrapper">
-                  <h5 className="h5">Web design</h5>
-                  <data value="80">80%</data>
-                </div>
-
-                <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "80%" }}></div>
-                </div>
-              </li>
-
-              <li className="skills-item">
-                <div className="title-wrapper">
-                  <h5 className="h5">Graphic design</h5>
-                  <data value="70">70%</data>
-                </div>
-
-                <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "70%" }}></div>
-                </div>
-              </li>
-
-              <li className="skills-item">
-                <div className="title-wrapper">
-                  <h5 className="h5">Branding</h5>
-                  <data value="90">90%</data>
-                </div>
-
-                <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "90%" }}></div>
-                </div>
-              </li>
-
-              <li className="skills-item">
-                <div className="title-wrapper">
-                  <h5 className="h5">WordPress</h5>
-                  <data value="50">50%</data>
-                </div>
-
-                <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "50%" }}></div>
-                </div>
-              </li>
-            </ul>
-          </section>
         </article>
 
         {/* PORTFOLIO */}
 
-        <article className="portfolio" data-page="portfolio">
+        <article className={`${activePage === "portfolio" ? "active" : ""}`}>
           <header>
             <h2 className="h2 article-title text-start">Portfolio</h2>
           </header>
@@ -931,9 +534,9 @@ function App() {
           </section>
         </article>
 
-        {/* Blog */}
+        {/* skills */}
 
-        <article className="blog" data-page="blog">
+        <article className={`${activePage === "skills" ? "active" : ""}`} >
           <header>
             <h2 className="h2 article-title text-start">Blog</h2>
           </header>
@@ -1125,63 +728,163 @@ function App() {
           </section>
         </article>
 
-        {/* Contact */}
+        {/* RESUME */}
 
-        <article className="contact" data-page="contact">
+        <article className={`${activePage === "resume" ? "active" : ""}`}>
           <header>
-            <h2 className="h2 article-title text-start">Contact</h2>
+            <h2 className="h2 article-title text-start">Resume</h2>
           </header>
 
-          <section className="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-                width="400"
-                height="300"
-                loading="lazy"
-              ></iframe>
-            </figure>
-          </section>
-
-          <section className="contact-form">
-            <h3 className="h3 form-title">Contact Form</h3>
-
-            <form action="#" className="form" data-form>
-              <div className="input-wrapper">
-                <input
-                  type="text"
-                  name="fullname"
-                  className="form-input"
-                  placeholder="Full name"
-                  required
-                  data-form-input
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  className="form-input"
-                  placeholder="Email address"
-                  required
-                  data-form-input
-                />
+          <section className="timeline">
+            <div className="title-wrapper">
+              <div className="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
               </div>
 
-              <textarea
-                name="message"
-                className="form-input"
-                placeholder="Your Message"
-                required
-                data-form-input
-              ></textarea>
+              <h3 className="h3">Education</h3>
+            </div>
 
-              <button className="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
+            <ol className="timeline-list">
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                  University school of the arts
+                </h4>
+
+                <span>2007 — 2008</span>
+
+                <p className="timeline-text">
+                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
+                  delenit atque corrupti, quos dolores et quas molestias
+                  exceptur.
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">New york academy of art</h4>
+
+                <span>2006 — 2007</span>
+
+                <p className="timeline-text">
+                  Ratione voluptatem sequi nesciunt, facere quisquams facere
+                  menda ossimus, omnis voluptas assumenda est omnis..
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                  High school of art and design
+                </h4>
+
+                <span>2002 — 2004</span>
+
+                <p className="timeline-text">
+                  Duis aute irure dolor in reprehenderit in voluptate, quila
+                  voluptas mag odit aut fugit, sed consequuntur magni dolores
+                  eos.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section className="timeline">
+            <div className="title-wrapper">
+              <div className="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 className="h3">Experience</h3>
+            </div>
+
+            <ol className="timeline-list">
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">Creative director</h4>
+
+                <span>2015 — Present</span>
+
+                <p className="timeline-text">
+                  Nemo enim ipsam voluptatem blanditiis praesentium voluptum
+                  delenit atque corrupti, quos dolores et qvuas molestias
+                  exceptur.
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">Art director</h4>
+
+                <span>2013 — 2015</span>
+
+                <p className="timeline-text">
+                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
+                  delenit atque corrupti, quos dolores et quas molestias
+                  exceptur.
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">Web designer</h4>
+
+                <span>2010 — 2013</span>
+
+                <p className="timeline-text">
+                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
+                  delenit atque corrupti, quos dolores et quas molestias
+                  exceptur.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section className="skill">
+            <h3 className="h3 skills-title">My skills</h3>
+
+            <ul className="skills-list content-card">
+              <li className="skills-item">
+                <div className="title-wrapper">
+                  <h5 className="h5">Web design</h5>
+                  <data value="80">80%</data>
+                </div>
+
+                <div className="skill-progress-bg">
+                  <div className="skill-progress-fill" style={{ width: "80%" }}></div>
+                </div>
+              </li>
+
+              <li className="skills-item">
+                <div className="title-wrapper">
+                  <h5 className="h5">Graphic design</h5>
+                  <data value="70">70%</data>
+                </div>
+
+                <div className="skill-progress-bg">
+                  <div className="skill-progress-fill" style={{ width: "70%" }}></div>
+                </div>
+              </li>
+
+              <li className="skills-item">
+                <div className="title-wrapper">
+                  <h5 className="h5">Branding</h5>
+                  <data value="90">90%</data>
+                </div>
+
+                <div className="skill-progress-bg">
+                  <div className="skill-progress-fill" style={{ width: "90%" }}></div>
+                </div>
+              </li>
+
+              <li className="skills-item">
+                <div className="title-wrapper">
+                  <h5 className="h5">WordPress</h5>
+                  <data value="50">50%</data>
+                </div>
+
+                <div className="skill-progress-bg">
+                  <div className="skill-progress-fill" style={{ width: "50%" }}></div>
+                </div>
+              </li>
+            </ul>
           </section>
         </article>
+
       </div>
 
       {/* <div>
