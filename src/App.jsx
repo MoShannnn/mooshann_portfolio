@@ -4,7 +4,7 @@ import "./App.css";
 import "./index.css";
 
 // Icons
-import { MailOutline, CallOutline, CalendarOutline, LocationOutline, LogoGithub, LogoLinkedin, ChevronDown } from "react-ionicons";
+import { IoMailOutline, IoCallOutline, IoCalendarOutline, IoLocationOutline, IoLogoGithub, IoLogoLinkedin, IoChevronDown } from "react-icons/io5";
 
 // import "./assets/js/script.js";
 
@@ -28,7 +28,7 @@ function App() {
           <button className="info_more-btn" data-sidebar-btn>
             <span>Show Contacts</span>
 
-            <ion-icon><ChevronDown color={'#ffdb70'}/></ion-icon>
+            <ion-icon><IoChevronDown color={'#ffdb70'}/></ion-icon>
           </button>
         </div>
 
@@ -38,7 +38,7 @@ function App() {
           <ul className="contacts-list">
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon><MailOutline color={'#ffdb70'} /></ion-icon>
+                <ion-icon><IoMailOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
               <div className="contact-info text-start">
@@ -52,7 +52,7 @@ function App() {
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon><CallOutline color={'#ffdb70'} /></ion-icon>
+                <ion-icon><IoCallOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
               <div className="contact-info text-start">
@@ -66,7 +66,7 @@ function App() {
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon><CalendarOutline color={'#ffdb70'} /></ion-icon>
+                <ion-icon><IoCalendarOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
               <div className="contact-info text-start">
@@ -78,7 +78,7 @@ function App() {
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon><LocationOutline color={'#ffdb70'} /></ion-icon>
+                <ion-icon><IoLocationOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
               <div className="contact-info text-start">
@@ -94,19 +94,19 @@ function App() {
           <ul className="social-list">
             <li className="social-item">
               <a href="https://github.com/MoShannnn" target="_blank" className="social-link">
-                <ion-icon><LogoGithub color={'#d6d6d6b3'} /></ion-icon>
+                <ion-icon><IoLogoGithub color={'#d6d6d6b3'} /></ion-icon>
               </a>
             </li>
 
             <li className="social-item">
               <a href="https://www.linkedin.com/in/mo-shan-b9628a28b/" target="_blank" className="social-link">
-              <ion-icon><LogoLinkedin color={'#d6d6d6b3'} height={"18px"} /></ion-icon>
+              <ion-icon><IoLogoLinkedin color={'#d6d6d6b3'} height={"18px"} /></ion-icon>
               </a>
             </li>
 
             <li className="social-item">
               <a href="mailto:moshan2500@gmail.com" target="_blank" className="social-link">
-                <ion-icon><MailOutline color={'#d6d6d6b3'} /></ion-icon>
+                <ion-icon><IoMailOutline color={'#d6d6d6b3'} /></ion-icon>
               </a>
             </li>
           </ul>
@@ -152,7 +152,7 @@ function App() {
 
         {/* About */}
 
-        <article className="about  active" data-page="about">
+        <article className="about active" data-page="about">
           <header>
             <h2 className="h2 article-title text-start">About me</h2>
           </header>
