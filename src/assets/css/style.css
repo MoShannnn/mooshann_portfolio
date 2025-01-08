@@ -401,6 +401,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  padding-left: 0px !important;
 }
 
 .contact-item {
@@ -425,6 +426,7 @@ main {
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
+  margin-bottom: 0px !important;
 }
 
 .contact-info address { font-style: normal; }
@@ -1862,6 +1864,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contact-info :is(.contact-link, time, address) {
     --fs-7: 14px;
     font-weight: var(--fw-300);
+    margin-bottom: 0px !important;
   }
 
   .separator:last-of-type {

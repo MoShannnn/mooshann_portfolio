@@ -1,9 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import myavatar from "./assets/images/my-avatar.png";
-import "./App.css";
 import "./assets/css/style.css";
+import "./App.css";
+import "./index.css";
+
+// Icons
+import { MailOutline, CallOutline, CalendarOutline, LocationOutline, LogoGithub, LogoLinkedin, ChevronDown } from "react-ionicons";
+
 // import "./assets/js/script.js";
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
           <button className="info_more-btn" data-sidebar-btn>
             <span>Show Contacts</span>
 
-            <ion-icon name="chevron-down"></ion-icon>
+            <ion-icon><ChevronDown color={'#ffdb70'}/></ion-icon>
           </button>
         </div>
 
@@ -36,10 +38,10 @@ function App() {
           <ul className="contacts-list">
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
+                <ion-icon><MailOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
-              <div className="contact-info">
+              <div className="contact-info text-start">
                 <p className="contact-title">Email</p>
 
                 <a href="mailto:richard@example.com" className="contact-link">
@@ -50,10 +52,10 @@ function App() {
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
+                <ion-icon><CallOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
-              <div className="contact-info">
+              <div className="contact-info text-start">
                 <p className="contact-title">Phone</p>
 
                 <a href="tel:+12133522795" className="contact-link">
@@ -64,22 +66,22 @@ function App() {
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="calendar-outline"></ion-icon>
+                <ion-icon><CalendarOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
-              <div className="contact-info">
+              <div className="contact-info text-start">
                 <p className="contact-title">Birthday</p>
 
-                <time datetime="1982-06-23">June 23, 1982</time>
+                <time dateTime="1982-06-23">June 23, 1982</time>
               </div>
             </li>
 
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
+                <ion-icon><LocationOutline color={'#ffdb70'} /></ion-icon>
               </div>
 
-              <div className="contact-info">
+              <div className="contact-info text-start">
                 <p className="contact-title">Location</p>
 
                 <address>Sacramento, California, USA</address>
@@ -91,20 +93,20 @@ function App() {
 
           <ul className="social-list">
             <li className="social-item">
-              <a href="#" className="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
+              <a href="https://github.com/MoShannnn" target="_blank" className="social-link">
+                <ion-icon><LogoGithub color={'#d6d6d6b3'} /></ion-icon>
               </a>
             </li>
 
             <li className="social-item">
-              <a href="#" className="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://www.linkedin.com/in/mo-shan-b9628a28b/" target="_blank" className="social-link">
+              <ion-icon><LogoLinkedin color={'#d6d6d6b3'} height={"18px"} /></ion-icon>
               </a>
             </li>
 
             <li className="social-item">
-              <a href="#" className="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a href="mailto:moshan2500@gmail.com" target="_blank" className="social-link">
+                <ion-icon><MailOutline color={'#d6d6d6b3'} /></ion-icon>
               </a>
             </li>
           </ul>
@@ -152,7 +154,7 @@ function App() {
 
         <article className="about  active" data-page="about">
           <header>
-            <h2 className="h2 article-title">About me</h2>
+            <h2 className="h2 article-title text-start">About me</h2>
           </header>
 
           <section className="about-text">
@@ -415,7 +417,7 @@ function App() {
                   Daniel lewis
                 </h4>
 
-                <time datetime="2021-06-14">14 June, 2021</time>
+                <time dateTime="2021-06-14">14 June, 2021</time>
 
                 <div data-modal-text>
                   <p>
@@ -498,7 +500,7 @@ function App() {
 
         <article className="resume" data-page="resume">
           <header>
-            <h2 className="h2 article-title">Resume</h2>
+            <h2 className="h2 article-title text-start">Resume</h2>
           </header>
 
           <section className="timeline">
@@ -611,7 +613,7 @@ function App() {
                 </div>
 
                 <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{width: "80%"}}></div>
+                  <div className="skill-progress-fill" style={{ width: "80%" }}></div>
                 </div>
               </li>
 
@@ -622,7 +624,7 @@ function App() {
                 </div>
 
                 <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{width: "70%"}}></div>
+                  <div className="skill-progress-fill" style={{ width: "70%" }}></div>
                 </div>
               </li>
 
@@ -633,7 +635,7 @@ function App() {
                 </div>
 
                 <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{width: "90%"}}></div>
+                  <div className="skill-progress-fill" style={{ width: "90%" }}></div>
                 </div>
               </li>
 
@@ -644,7 +646,7 @@ function App() {
                 </div>
 
                 <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{width: "50%"}}></div>
+                  <div className="skill-progress-fill" style={{ width: "50%" }}></div>
                 </div>
               </li>
             </ul>
@@ -655,7 +657,7 @@ function App() {
 
         <article className="portfolio" data-page="portfolio">
           <header>
-            <h2 className="h2 article-title">Portfolio</h2>
+            <h2 className="h2 article-title text-start">Portfolio</h2>
           </header>
 
           <section className="projects">
@@ -933,7 +935,7 @@ function App() {
 
         <article className="blog" data-page="blog">
           <header>
-            <h2 className="h2 article-title">Blog</h2>
+            <h2 className="h2 article-title text-start">Blog</h2>
           </header>
 
           <section className="blog-posts">
@@ -954,7 +956,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">
@@ -985,7 +987,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">
@@ -1016,7 +1018,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">Design digest #80</h3>
@@ -1045,7 +1047,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">
@@ -1076,7 +1078,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">
@@ -1107,7 +1109,7 @@ function App() {
 
                       <span className="dot"></span>
 
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
                     </div>
 
                     <h3 className="h3 blog-item-title">Design digest #79</h3>
@@ -1127,7 +1129,7 @@ function App() {
 
         <article className="contact" data-page="contact">
           <header>
-            <h2 className="h2 article-title">Contact</h2>
+            <h2 className="h2 article-title text-start">Contact</h2>
           </header>
 
           <section className="mapbox" data-mapbox>
