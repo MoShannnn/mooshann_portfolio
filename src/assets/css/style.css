@@ -1225,6 +1225,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+.separator:last-of-type {
+  margin: 15px 0;
+  opacity: 0;
+}
 
 
 /*-----------------------------------*\
@@ -1244,6 +1248,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .clients-item { min-width: calc(33.33% - 10px); }
 
 
+  .social-list {
+    margin-left: auto;
+  }
+  
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1377,7 +1385,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar { border-radius: 20px 20px 0 0; }
 
-  .navbar-list { gap: 20px; }
+  .navbar-list { gap: 20px; margin-bottom: 0rem !important;}
 
   .navbar-link { --fs-8: 14px; }
 
@@ -1831,7 +1839,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 60px;
+    padding-top: 40px;
     z-index: 1;
   }
 
@@ -1867,12 +1875,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 0px !important;
   }
 
-  .separator:last-of-type {
-    margin: 15px 0;
-    opacity: 0;
-  }
-
-  .social-list { justify-content: center; }
+  .social-list { justify-content: center; margin-left: 0px}
 
 
 

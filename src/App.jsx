@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import myavatar from "./assets/images/my-avatar.png";
 import "./assets/css/style.css";
 import "./App.css";
 import "./index.css";
 
 // Icons
 import { IoMailOutline, IoCallOutline, IoCalendarOutline, IoLocationOutline, IoLogoGithub, IoLogoLinkedin, IoChevronDown } from "react-icons/io5";
+import { MdWeb } from "react-icons/md";
 
-// import "./assets/js/script.js";
+// Images
+import myavatar from "./assets/images/memoji.png";
+import designIcon  from "./assets/images/icon-design.svg";
+import webAppIcon from "./assets/images/icon-dev.svg";
+import mobileAppIcon from "./assets/images/icon-app.svg";
+import webIcon from "./assets/images/icon-web.svg";
+import { FaLaptopCode } from 'react-icons/fa';
 
 function App() {
   const [sidebarActive, setSidebarActive] = useState(false);
@@ -34,77 +40,11 @@ function App() {
 
           <div className="info-content">
             <h1 className="name" title="Richard hanrick">
-              Richard hanrick
+              Mo Shan
             </h1>
 
-            <p className="title">Web developer</p>
+            <p className="title">Full Stack Developer</p>
           </div>
-
-          <button className="info_more-btn" data-sidebar-btn onClick={toggleSidebar}>
-            <span>Show Contacts</span>
-
-            <ion-icon><IoChevronDown color={'#ffdb70'} /></ion-icon>
-          </button>
-        </div>
-
-        <div className="sidebar-info_more">
-          <div className="separator"></div>
-
-          <ul className="contacts-list">
-            <li className="contact-item">
-              <div className="icon-box">
-                <ion-icon><IoMailOutline color={'#ffdb70'} /></ion-icon>
-              </div>
-
-              <div className="contact-info text-start">
-                <p className="contact-title">Email</p>
-
-                <a href="mailto:richard@example.com" className="contact-link">
-                  richard@example.com
-                </a>
-              </div>
-            </li>
-
-            <li className="contact-item">
-              <div className="icon-box">
-                <ion-icon><IoCallOutline color={'#ffdb70'} /></ion-icon>
-              </div>
-
-              <div className="contact-info text-start">
-                <p className="contact-title">Phone</p>
-
-                <a href="tel:+12133522795" className="contact-link">
-                  +1 (213) 352-2795
-                </a>
-              </div>
-            </li>
-
-            <li className="contact-item">
-              <div className="icon-box">
-                <ion-icon><IoCalendarOutline color={'#ffdb70'} /></ion-icon>
-              </div>
-
-              <div className="contact-info text-start">
-                <p className="contact-title">Birthday</p>
-
-                <time dateTime="1982-06-23">June 23, 1982</time>
-              </div>
-            </li>
-
-            <li className="contact-item">
-              <div className="icon-box">
-                <ion-icon><IoLocationOutline color={'#ffdb70'} /></ion-icon>
-              </div>
-
-              <div className="contact-info text-start">
-                <p className="contact-title">Location</p>
-
-                <address>Sacramento, California, USA</address>
-              </div>
-            </li>
-          </ul>
-
-          <div className="separator"></div>
 
           <ul className="social-list">
             <li className="social-item">
@@ -125,6 +65,74 @@ function App() {
               </a>
             </li>
           </ul>
+
+          <button className="info_more-btn" data-sidebar-btn onClick={toggleSidebar}>
+            <span>Show Contacts</span>
+
+            <ion-icon><IoChevronDown color={'#ffdb70'} /></ion-icon>
+          </button>
+        </div>
+
+        <div className="sidebar-info_more">
+          <div className="separator"></div>
+
+          <ul className="contacts-list">
+            <li className="contact-item">
+              <div className="icon-box">
+                <ion-icon><IoMailOutline color={'#ffdb70'} /></ion-icon>
+              </div>
+
+              <div className="contact-info text-start">
+                <p className="contact-title">Email</p>
+
+                <a href="mailto:moshan2500@gmail.com" className="contact-link">
+                  moshan2500@gmail.com
+                </a>
+              </div>
+            </li>
+
+            <li className="contact-item">
+              <div className="icon-box">
+                <ion-icon><IoCallOutline color={'#ffdb70'} /></ion-icon>
+              </div>
+
+              <div className="contact-info text-start">
+                <p className="contact-title">Phone</p>
+
+                <a href="tel:+959751026316" className="contact-link">
+                  +959 751026316
+                </a>
+              </div>
+            </li>
+
+            <li className="contact-item">
+              <div className="icon-box">
+                <ion-icon><IoCalendarOutline color={'#ffdb70'} /></ion-icon>
+              </div>
+
+              <div className="contact-info text-start">
+                <p className="contact-title">Birthday</p>
+
+                <time dateTime="2004-02-6">Feb 6, 2004</time>
+              </div>
+            </li>
+
+            <li className="contact-item">
+              <div className="icon-box">
+                <ion-icon><IoLocationOutline color={'#ffdb70'} /></ion-icon>
+              </div>
+
+              <div className="contact-info text-start">
+                <p className="contact-title">Location</p>
+
+                <address>Yangon</address>
+              </div>
+            </li>
+          </ul>
+
+          <div className="separator"></div>
+
+          
         </div>
       </aside>
 
@@ -156,18 +164,15 @@ function App() {
 
           <section className="about-text">
             <p>
-              I'm Creative Director and UI/UX Designer from Sydney, Australia,
-              working in web development and print media. I enjoy turning
-              complex problems into simple, beautiful and intuitive designs.
+              A passionate Full Stack Developer committed to gaining knowledge, skills, and experience. 
+              Experienced in web and mobile application development, as well as UI/UX design using Figma.
             </p>
 
             <p>
-              My job is to build your website so that it is functional and
-              user-friendly but at the same time attractive. Moreover, I add
-              personal touch to your product and make sure that is eye-catching
-              and easy to use. My aim is to bring across your message and
-              identity in the most creative way. I created web design for many
-              famous brand companies.
+            Beyond my professional experience, I am committed to continuous growth and life longlearning 
+            by regularly immersing myself in personal projects, online courses, and technology activities 
+            to sharpen my skills. I am deeply interested in the business strategy that 
+            drives technology impact on efficiency and growth. 
             </p>
           </section>
 
@@ -179,15 +184,17 @@ function App() {
             <ul className="service-list">
               <li className="service-item">
                 <div className="service-icon-box">
-                  <img
-                    src="./assets/images/icon-design.svg"
+                {/* <FaLaptopCode size={40} color='#ffdb70'/> */}
+
+                <img
+                    src={webIcon}
                     alt="design icon"
-                    width="40"
+                    width="52"
                   />
                 </div>
 
                 <div className="service-content-box">
-                  <h4 className="h4 service-item-title">Web design</h4>
+                  <h4 className="h4 service-item-title">Website</h4>
 
                   <p className="service-item-text">
                     The most modern and high-quality design made at a
@@ -199,14 +206,14 @@ function App() {
               <li className="service-item">
                 <div className="service-icon-box">
                   <img
-                    src="./assets/images/icon-dev.svg"
+                    src={webAppIcon}
                     alt="Web development icon"
                     width="40"
                   />
                 </div>
 
                 <div className="service-content-box">
-                  <h4 className="h4 service-item-title">Web development</h4>
+                  <h4 className="h4 service-item-title">Web Application</h4>
 
                   <p className="service-item-text">
                     High-quality development of sites at the professional level.
@@ -217,14 +224,14 @@ function App() {
               <li className="service-item">
                 <div className="service-icon-box">
                   <img
-                    src="./assets/images/icon-app.svg"
+                    src={mobileAppIcon}
                     alt="mobile app icon"
                     width="40"
                   />
                 </div>
 
                 <div className="service-content-box">
-                  <h4 className="h4 service-item-title">Mobile apps</h4>
+                  <h4 className="h4 service-item-title">Mobile Application</h4>
 
                   <p className="service-item-text">
                     Professional development of applications for iOS and
@@ -236,14 +243,14 @@ function App() {
               <li className="service-item">
                 <div className="service-icon-box">
                   <img
-                    src="./assets/images/icon-photo.svg"
+                    src={designIcon}
                     alt="camera icon"
                     width="40"
                   />
                 </div>
 
                 <div className="service-content-box">
-                  <h4 className="h4 service-item-title">Photography</h4>
+                  <h4 className="h4 service-item-title">UI/ UX Design</h4>
 
                   <p className="service-item-text">
                     I make high-quality photos of any category at a professional
