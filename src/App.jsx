@@ -9,20 +9,93 @@ import Sidebar from './sections/Sidebar';
 // components
 import MouseGlow from './components/MouseGlow';
 
+// Icons
 import designIcon from "./assets/images/icon-design.svg";
 import webAppIcon from "./assets/images/icon-dev.svg";
 import mobileAppIcon from "./assets/images/icon-app.svg";
 import webIcon from "./assets/images/icon-web.svg";
 
+// Images
+import antiProcrastImage from './assets/images/portfolios/anti_procrast_black.png';
+
 function App() {
   const [activePage, setActivePage] = useState("about");
+
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  //data
+
+  const pages = ["about", "portfolio", "skills", 'resume'];
+
+  const categories = ["all", "website", "web application", "mobile application", "figma"];
+
+  const portfolios = [
+    {
+      'name': 'FocusFlow Anti-Procrast Web App',
+      'image': antiProcrastImage,
+      'language': 'Vue, Laravel, Inertia.js, Tailwind, Shadcn, Filament',
+      'categories': ['web application'],
+    },
+    {
+      'name': 'Tempo Ticket Booking System',
+      'image': '',
+      'language': 'HTML, JS, JS, Bootstrap, Laravel, Fiament',
+      'categories': ['web application'],
+    },
+    {
+      'name': 'AI Personal Color Detect System',
+      'image': '',
+      'language': 'GPT API, Python, Django, Tailwlind',
+      'categories': ['web application'],
+    },
+    {
+      'name': 'i Approve',
+      'image': '',
+      'language': 'HTML, CSS, JS, Bootstrap, Tailwind CSS, Laravel, JQuery, AJAX',
+      'categories': ['web application'],
+    },
+    {
+      'name': 'BakerBakes Food Delivery System',
+      'image': '',
+      'language': 'HTML, CSS, JS, Bootstrap, PHP and SQL.',
+      'categories': ['web application'],
+    },
+    {
+      'name': 'London Website',
+      'image': '',
+      'language': 'HTML, CSS, JS, Bootstrap.',
+      'categories': ['website'],
+    },
+    {
+      'name': 'Language Center Website',
+      'image': '',
+      'language': 'HTML, CSS, JS, Bootstrap, Laravel and Filament.',
+      'categories': ['website'],
+    },
+    {
+      'name': 'Digital Stamp',
+      'image': '',
+      'language': 'React Native and Tailwind CSS',
+      'categories': ['mobile application', 'figma'],
+    },
+    {
+      'name': 'Tutor Link',
+      'image': '',
+      'language': 'A UI Design for Searching Local Guide.',
+      'categories': ['figma'],
+    },
+
+  ]
 
   const handlePageNavigation = (page) => {
     setActivePage(page);
     window.scrollTo(0, 0);
   };
 
-  const pages = ["about", "portfolio", "skills", 'resume'];
+  const filteredPortfolios =
+    activeCategory === "all"
+      ? portfolios
+      : portfolios.filter((project) => project.categories.includes(activeCategory));
 
   return (
     <main className='relative glow-capture'>
@@ -164,81 +237,48 @@ function App() {
 
           <section className="projects">
             <ul className="filter-list">
-              <li className="filter-item">
-                <button className="active" data-filter-btn>
-                  All
-                </button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Web design</button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Applications</button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Web development</button>
-              </li>
+              {categories.map((category) => (
+                <li className="filter-item" key={category}>
+                  <button
+                    className={activeCategory === category ? 'active' : ''}
+                    onClick={() => setActiveCategory(category)}
+                    data-filter-btn>
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </button>
+                </li>
+              ))}
             </ul>
 
-            <div className="filter-select-box">
-              <button className="filter-select" data-select>
-                <div className="select-value" data-selecct-value>
-                  Select category
-                </div>
-
-                <div className="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul className="select-list">
-                <li className="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Web design</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Applications</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Web development</button>
-                </li>
-              </ul>
-            </div>
-
             <ul className="project-list">
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
+              {filteredPortfolios.map((project, index) => (
+                <li
+                  className={`project-item ${activeCategory === "all" || project.categories.includes(activeCategory)
+                      ? "active"
+                      : ""
+                    }`}
+                  data-filter-item
+                  key={index}
+                >
+                  <a href="#">
+                    <figure className="project-img">
+                      <div className="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img
+                        src={project.image || "./assets/images/placeholder.png"}
+                        alt={project.name}
+                        loading="lazy"
+                      />
+                    </figure>
 
-                    <img
-                      src="./assets/images/project-1.jpg"
-                      alt="finance"
-                      loading="lazy"
-                    />
-                  </figure>
+                    <h3 className="project-title">{project.name}</h3>
+                    <p className="project-category">{project.categories.join(", ")}</p>
+                  </a>
+                </li>
+              ))}
 
-                  <h3 className="project-title">Finance</h3>
 
-                  <p className="project-category">Web development</p>
-                </a>
-              </li>
-
-              <li
+              {/* <li
                 className="project-item  active"
                 data-filter-item
                 data-category="web development"
@@ -428,7 +468,7 @@ function App() {
 
                   <p className="project-category">Web development</p>
                 </a>
-              </li>
+              </li> */}
             </ul>
           </section>
         </article>
