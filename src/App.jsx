@@ -17,6 +17,14 @@ import webIcon from "./assets/images/icon-web.svg";
 
 // Images
 import antiProcrastImage from './assets/images/portfolios/anti_procrast_black.png';
+import ticketBookingImage from './assets/images/portfolios/ticket_booking_system.png';
+import trueColor from './assets/images/portfolios/true_color.png';
+import iApprove from './assets/images/portfolios/i_approve.png';
+import foodDelivery from './assets/images/portfolios/food_delivery.png';
+import londonWebsite from './assets/images/portfolios/london_website.png';
+import helloChineseWebsite from './assets/images/portfolios/hello_chinese_website.png';
+import tutorLink from './assets/images/portfolios/tutor_link.png';
+import digitalStamp from './assets/images/portfolios/digital_stamp.png';
 
 function App() {
   const [activePage, setActivePage] = useState("about");
@@ -37,50 +45,50 @@ function App() {
       'categories': ['web application'],
     },
     {
-      'name': 'Tempo Ticket Booking System',
-      'image': '',
+      'name': 'Tempo Ticket Booking',
+      'image': ticketBookingImage,
       'language': 'HTML, JS, JS, Bootstrap, Laravel, Fiament',
       'categories': ['web application'],
     },
     {
-      'name': 'AI Personal Color Detect System',
-      'image': '',
+      'name': 'AI Personal Color Detect',
+      'image': trueColor,
       'language': 'GPT API, Python, Django, Tailwlind',
       'categories': ['web application'],
     },
     {
-      'name': 'i Approve',
-      'image': '',
+      'name': 'iApprove',
+      'image': iApprove,
       'language': 'HTML, CSS, JS, Bootstrap, Tailwind CSS, Laravel, JQuery, AJAX',
       'categories': ['web application'],
     },
     {
-      'name': 'BakerBakes Food Delivery System',
-      'image': '',
+      'name': 'BakerBakes Food Delivery',
+      'image': foodDelivery,
       'language': 'HTML, CSS, JS, Bootstrap, PHP and SQL.',
       'categories': ['web application'],
     },
     {
       'name': 'London Website',
-      'image': '',
+      'image': londonWebsite,
       'language': 'HTML, CSS, JS, Bootstrap.',
       'categories': ['website'],
     },
     {
       'name': 'Language Center Website',
-      'image': '',
+      'image': helloChineseWebsite,
       'language': 'HTML, CSS, JS, Bootstrap, Laravel and Filament.',
       'categories': ['website'],
     },
     {
       'name': 'Digital Stamp',
-      'image': '',
+      'image': digitalStamp,
       'language': 'React Native and Tailwind CSS',
       'categories': ['mobile application', 'figma'],
     },
     {
       'name': 'Tutor Link',
-      'image': '',
+      'image': tutorLink,
       'language': 'A UI Design for Searching Local Guide.',
       'categories': ['figma'],
     },
@@ -134,7 +142,7 @@ function App() {
             </p>
 
             <p>
-              Beyond my professional experience, I am committed to continuous growth and life longlearning
+              Beyond my professional experience, I am committed to continuous growth and lifelong learning
               by regularly immersing myself in personal projects, online courses, and technology activities
               to sharpen my skills. I am deeply interested in the business strategy that
               drives technology impact on efficiency and growth.
