@@ -1636,7 +1636,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* portfolio and blog grid */
 
-  .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
+  .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
 
 
 
@@ -1887,3 +1887,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/* My Style  */
+display: flex
+;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;

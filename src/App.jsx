@@ -14,6 +14,12 @@ import designIcon from "./assets/images/icon-design.svg";
 import webAppIcon from "./assets/images/icon-dev.svg";
 import mobileAppIcon from "./assets/images/icon-app.svg";
 import webIcon from "./assets/images/icon-web.svg";
+import {
+  IoEyeOutline,
+  IoBookOutline,
+  IoBriefcaseOutline
+} from "react-icons/io5";
+import laravelIcon from "./assets/images/icons/laravel.svg"
 
 // Images
 import antiProcrastImage from './assets/images/portfolios/anti_procrast_black.png';
@@ -41,13 +47,13 @@ function App() {
     {
       'name': 'FocusFlow Anti-Procrast Web App',
       'image': antiProcrastImage,
-      'language': 'Vue, Laravel, Inertia.js, Tailwind, Shadcn, Filament',
+      'language': 'Vue, Laravel, Shadcn, Filament',
       'categories': ['web application'],
     },
     {
       'name': 'Tempo Ticket Booking',
       'image': ticketBookingImage,
-      'language': 'HTML, JS, JS, Bootstrap, Laravel, Fiament',
+      'language': 'Bootstrap, Laravel, Fiament',
       'categories': ['web application'],
     },
     {
@@ -59,37 +65,37 @@ function App() {
     {
       'name': 'iApprove',
       'image': iApprove,
-      'language': 'HTML, CSS, JS, Bootstrap, Tailwind CSS, Laravel, JQuery, AJAX',
+      'language': 'JQuery, AJAX, Laravel',
       'categories': ['web application'],
     },
     {
       'name': 'BakerBakes Food Delivery',
       'image': foodDelivery,
-      'language': 'HTML, CSS, JS, Bootstrap, PHP and SQL.',
+      'language': 'Bootstrap, PHP, SQL',
       'categories': ['web application'],
     },
     {
       'name': 'London Website',
       'image': londonWebsite,
-      'language': 'HTML, CSS, JS, Bootstrap.',
+      'language': 'Javascript, Bootstrap',
       'categories': ['website'],
     },
     {
       'name': 'Language Center Website',
       'image': helloChineseWebsite,
-      'language': 'HTML, CSS, JS, Bootstrap, Laravel and Filament.',
+      'language': 'Bootstrap, Laravel and Filament',
       'categories': ['website'],
     },
     {
       'name': 'Digital Stamp',
       'image': digitalStamp,
-      'language': 'React Native and Tailwind CSS',
+      'language': 'React Native and NativeWind',
       'categories': ['mobile application', 'figma'],
     },
     {
       'name': 'Tutor Link',
       'image': tutorLink,
-      'language': 'A UI Design for Searching Local Guide.',
+      'language': 'UI Design for Searching Local Guide.',
       'categories': ['figma'],
     },
 
@@ -261,8 +267,8 @@ function App() {
               {filteredPortfolios.map((project, index) => (
                 <li
                   className={`project-item ${activeCategory === "all" || project.categories.includes(activeCategory)
-                      ? "active"
-                      : ""
+                    ? "active"
+                    : ""
                     }`}
                   data-filter-item
                   key={index}
@@ -270,7 +276,7 @@ function App() {
                   <a href="#">
                     <figure className="project-img">
                       <div className="project-item-icon-box">
-                        <ion-icon name="eye-outline"></ion-icon>
+                        <IoEyeOutline />
                       </div>
                       <img
                         src={project.image || "./assets/images/placeholder.png"}
@@ -280,395 +286,125 @@ function App() {
                     </figure>
 
                     <h3 className="project-title">{project.name}</h3>
-                    <p className="project-category">{project.categories.join(", ")}</p>
+                    <p className="project-category">{project.language}</p>
                   </a>
                 </li>
               ))}
-
-
-              {/* <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-2.png"
-                      alt="orizon"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Orizon</h3>
-
-                  <p className="project-category">Web development</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-3.jpg"
-                      alt="fundo"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Fundo</h3>
-
-                  <p className="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="applications"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-4.png"
-                      alt="brawlhalla"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Brawlhalla</h3>
-
-                  <p className="project-category">Applications</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-5.png"
-                      alt="dsm."
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">DSM.</h3>
-
-                  <p className="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-6.png"
-                      alt="metaspark"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">MetaSpark</h3>
-
-                  <p className="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-7.png"
-                      alt="summary"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Summary</h3>
-
-                  <p className="project-category">Web development</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="applications"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-8.jpg"
-                      alt="task manager"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Task Manager</h3>
-
-                  <p className="project-category">Applications</p>
-                </a>
-              </li>
-
-              <li
-                className="project-item  active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-9.png"
-                      alt="arrival"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 className="project-title">Arrival</h3>
-
-                  <p className="project-category">Web development</p>
-                </a>
-              </li> */}
             </ul>
           </section>
         </article>
 
-        {/* skills */}
+        {/* Skills */}
 
-        <article className={`${activePage === "skills" ? "active" : ""}`} >
+        <article className={`${activePage === "skills" ? "active" : ""}`}>
           <header>
-            <h2 className="h2 article-title text-start">Blog</h2>
+            <h2 className="h2 article-title text-start">Skills</h2>
           </header>
 
           <section className="blog-posts">
             <ul className="blog-posts-list">
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-1.jpg"
-                      alt="Design conferences in 2022"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">
-                      Design conferences in 2022
-                    </h3>
-
-                    <p className="blog-text">
-                      Veritatis et quasi architecto beatae vitae dicta sunt,
-                      explicabo.
-                    </p>
-                  </div>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-2.jpg"
-                      alt="Best fonts every designer"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">
-                      Best fonts every designer
-                    </h3>
-
-                    <p className="blog-text">
-                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis
-                      est eligendi.
-                    </p>
-                  </div>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-3.jpg"
-                      alt="Design digest #80"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">Design digest #80</h3>
-
-                    <p className="blog-text">
-                      Excepteur sint occaecat cupidatat no proident, quis
-                      nostrum exercitationem ullam corporis suscipit.
-                    </p>
-                  </div>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-4.jpg"
-                      alt="UI interactions of the week"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">
-                      UI interactions of the week
-                    </h3>
-
-                    <p className="blog-text">
-                      Enim ad minim veniam, consectetur adipiscing elit, quis
-                      nostrud exercitation ullamco laboris nisi.
-                    </p>
-                  </div>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-5.jpg"
-                      alt="The forgotten art of spacing"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">
-                      The forgotten art of spacing
-                    </h3>
-
-                    <p className="blog-text">
-                      Maxime placeat, sed do eiusmod tempor incididunt ut labore
-                      et dolore magna aliqua.
-                    </p>
-                  </div>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
-                  <figure className="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-6.jpg"
-                      alt="Design digest #79"
-                      loading="lazy"
-                    />
-                  </figure>
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
+                </a>
+              </li>
 
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 className="h3 blog-item-title">Design digest #79</h3>
-
-                    <p className="blog-text">
-                      Optio cumque nihil impedit uo minus quod maxime placeat,
-                      velit esse cillum.
-                    </p>
-                  </div>
+              <li className="blog-post-item">
+                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                  <img
+                    src={laravelIcon}
+                    alt="Design conferences in 2022"
+                    loading="lazy"
+                    width="40"
+                    style={{ color: 'white' }}
+                  />
+                  <h5 className="h5 blog-item-title mt-2 mb-0">
+                    Laravel
+                  </h5>
                 </a>
               </li>
             </ul>
@@ -685,7 +421,7 @@ function App() {
           <section className="timeline">
             <div className="title-wrapper">
               <div className="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <IoBookOutline />
               </div>
 
               <h3 className="h3">Education</h3>
@@ -736,7 +472,7 @@ function App() {
           <section className="timeline">
             <div className="title-wrapper">
               <div className="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <IoBriefcaseOutline />
               </div>
 
               <h3 className="h3">Experience</h3>
