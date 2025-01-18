@@ -19,7 +19,21 @@ import {
   IoBookOutline,
   IoBriefcaseOutline
 } from "react-icons/io5";
+import { VscSymbolEvent } from "react-icons/vsc";
+import htmlIcon from "./assets/images/icons/html5.svg"
+import cssIcon from "./assets/images/icons/css.svg"
+import jsIcon from "./assets/images/icons/javascript.svg"
+import typescriptIcon from "./assets/images/icons/typescript.svg"
+import bootstrapIcon from "./assets/images/icons/bootstrap.svg"
+import tailwindIcon from "./assets/images/icons/tailwindcss.svg"
+import jqueryIcon from "./assets/images/icons/jquery.svg"
+import reactIcon from "./assets/images/icons/react.svg"
+import vuedotjsIcon from "./assets/images/icons/vuedotjs.svg"
+import phpIcon from "./assets/images/icons/php.svg"
 import laravelIcon from "./assets/images/icons/laravel.svg"
+import pythonIcon from "./assets/images/icons/python.svg"
+import djangoIcon from "./assets/images/icons/django.svg"
+import figmaIcon from "./assets/images/icons/figma.svg"
 
 // Images
 import antiProcrastImage from './assets/images/portfolios/anti_procrast_black.png';
@@ -99,6 +113,57 @@ function App() {
       'categories': ['figma'],
     },
 
+  ]
+
+  const skills = [{
+    'name': 'Bootstrap',
+    'image': bootstrapIcon,
+  },
+  {
+    'name': 'TailwindCSS',
+    'image': tailwindIcon,
+  },
+  {
+    'name': 'React',
+    'image': reactIcon,
+  },
+  {
+    'name': 'Vue',
+    'image': vuedotjsIcon,
+  },
+  {
+    'name': 'Php',
+    'image': phpIcon,
+  },
+  {
+    'name': 'Laravel',
+    'image': laravelIcon,
+  },
+
+  {
+    'name': 'Python',
+    'image': pythonIcon,
+  },
+  {
+    'name': 'Django',
+    'image': djangoIcon,
+  },
+  {
+    'name': 'HTML',
+    'image': htmlIcon,
+  },
+  {
+    'name': 'CSS',
+    'image': cssIcon,
+  },
+  {
+    'name': 'JavaScript',
+    'image': jsIcon,
+  },
+  {
+    'name': 'TypeScript',
+    'image': typescriptIcon,
+  },
   ]
 
   const handlePageNavigation = (page) => {
@@ -303,221 +368,25 @@ function App() {
 
           <section className="blog-posts">
             <ul className="blog-posts-list">
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
-                  <img
-                    src={laravelIcon}
-                    alt="Design conferences in 2022"
-                    loading="lazy"
-                    width="40"
-                    style={{ color: 'white' }}
-                  />
-                  <h5 className="h5 blog-item-title mt-2 mb-0">
-                    Laravel
-                  </h5>
-                </a>
-              </li>
+              {skills.map((skill) => (
+                <li className="blog-post-item">
+                  <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
+                    <img
+                      src={skill.image}
+                      alt="Design conferences in 2022"
+                      loading="lazy"
+                      width="40"
+                    />
+                    <h5 className="h5 blog-item-title mt-2 mb-0">
+                      {skill.name}
+                    </h5>
+                  </a>
+                </li>
+              ))}
             </ul>
           </section>
-        </article>
 
-        {/* RESUME */}
-
-        <article className={`${activePage === "resume" ? "active" : ""}`}>
-          <header>
-            <h2 className="h2 article-title text-start">Resume</h2>
-          </header>
-
-          <section className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <IoBookOutline />
-              </div>
-
-              <h3 className="h3">Education</h3>
-            </div>
-
-            <ol className="timeline-list">
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">
-                  University school of the arts
-                </h4>
-
-                <span>2007 — 2008</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">New york academy of art</h4>
-
-                <span>2006 — 2007</span>
-
-                <p className="timeline-text">
-                  Ratione voluptatem sequi nesciunt, facere quisquams facere
-                  menda ossimus, omnis voluptas assumenda est omnis..
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">
-                  High school of art and design
-                </h4>
-
-                <span>2002 — 2004</span>
-
-                <p className="timeline-text">
-                  Duis aute irure dolor in reprehenderit in voluptate, quila
-                  voluptas mag odit aut fugit, sed consequuntur magni dolores
-                  eos.
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <IoBriefcaseOutline />
-              </div>
-
-              <h3 className="h3">Experience</h3>
-            </div>
-
-            <ol className="timeline-list">
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Creative director</h4>
-
-                <span>2015 — Present</span>
-
-                <p className="timeline-text">
-                  Nemo enim ipsam voluptatem blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et qvuas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Art director</h4>
-
-                <span>2013 — 2015</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-
-              <li className="timeline-item">
-                <h4 className="h4 timeline-item-title">Web designer</h4>
-
-                <span>2010 — 2013</span>
-
-                <p className="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section className="skill">
+          <section className="skill mt-4">
             <h3 className="h3 skills-title">My skills</h3>
 
             <ul className="skills-list content-card">
@@ -566,6 +435,111 @@ function App() {
               </li>
             </ul>
           </section>
+        </article>
+
+        {/* RESUME */}
+
+        <article className={`${activePage === "resume" ? "active" : ""}`}>
+          <header>
+            <h2 className="h2 article-title text-start">Resume</h2>
+          </header>
+
+          <section className="timeline">
+            <div className="title-wrapper">
+              <div className="icon-box">
+                <IoBookOutline />
+              </div>
+
+              <h3 className="h3">Education</h3>
+            </div>
+
+            <ol className="timeline-list">
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                BSc (Hons) Business Computing and Information System
+                </h4>
+
+                <span>2024 — 2025</span>
+
+                <p className="timeline-text">
+                University of Central Lancashire
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                NCC Diploma in Computing (with Business Management)
+                </h4>
+
+                <span>2021 — 2024</span>
+
+                <p className="timeline-text">
+                Strategy First University College
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section className="timeline">
+            <div className="title-wrapper">
+              <div className="icon-box">
+                <IoBriefcaseOutline />
+              </div>
+
+              <h3 className="h3">Experience</h3>
+            </div>
+
+            <ol className="timeline-list">
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                  Junior Software Engineer
+                </h4>
+
+                <span>2023 — 2025</span>
+
+                <p className="timeline-text">
+                Enrich Insights Consulting Services Co., Ltd
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section className="timeline">
+            <div className="title-wrapper">
+              <div className="icon-box">
+              <VscSymbolEvent />
+              </div>
+
+              <h3 className="h3">Activities</h3>
+            </div>
+
+            <ol className="timeline-list">
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                Samsung AI Hackathon 
+                </h4>
+
+                <span>2024 — 2025</span>
+
+                <p className="timeline-text">
+                Samsung Innovation Campus
+                </p>
+              </li>
+
+              <li className="timeline-item">
+                <h4 className="h4 timeline-item-title">
+                Strategy First's Mobile Application Plan Competition 2024
+                </h4>
+
+                <span>2024 — 2025</span>
+
+                <p className="timeline-text">
+                Strategy First University College
+                </p>
+              </li>
+            </ol>
+          </section>
+
         </article>
 
       </div>
