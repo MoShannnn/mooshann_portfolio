@@ -26,7 +26,6 @@ import jsIcon from "./assets/images/icons/javascript.svg"
 import typescriptIcon from "./assets/images/icons/typescript.svg"
 import bootstrapIcon from "./assets/images/icons/bootstrap.svg"
 import tailwindIcon from "./assets/images/icons/tailwindcss.svg"
-import jqueryIcon from "./assets/images/icons/jquery.svg"
 import reactIcon from "./assets/images/icons/react.svg"
 import vuedotjsIcon from "./assets/images/icons/vuedotjs.svg"
 import phpIcon from "./assets/images/icons/php.svg"
@@ -228,8 +227,6 @@ function App() {
             <ul className="service-list">
               <li className="service-item">
                 <div className="service-icon-box">
-                  {/* <FaLaptopCode size={40} color='#818cf8'/> */}
-
                   <img
                     src={webIcon}
                     alt="design icon"
@@ -241,8 +238,7 @@ function App() {
                   <h4 className="h4 service-item-title">Website</h4>
 
                   <p className="service-item-text">
-                    The most modern and high-quality design made at a
-                    professional level.
+                    Building responsive and user-friendly websites tailored to client needs.
                   </p>
                 </div>
               </li>
@@ -260,7 +256,7 @@ function App() {
                   <h4 className="h4 service-item-title">Web Application</h4>
 
                   <p className="service-item-text">
-                    High-quality development of sites at the professional level.
+                    Developing efficient and scalable web applications for seamless functionality.
                   </p>
                 </div>
               </li>
@@ -278,8 +274,7 @@ function App() {
                   <h4 className="h4 service-item-title">Mobile Application</h4>
 
                   <p className="service-item-text">
-                    Professional development of applications for iOS and
-                    Android.
+                    Creating intuitive mobile apps focused on functionality and engagement.
                   </p>
                 </div>
               </li>
@@ -297,8 +292,7 @@ function App() {
                   <h4 className="h4 service-item-title">UI/ UX Design</h4>
 
                   <p className="service-item-text">
-                    I make high-quality photos of any category at a professional
-                    level.
+                    Designing clean and user-centric interfaces for optimal user satisfaction.
                   </p>
                 </div>
               </li>
@@ -392,7 +386,7 @@ function App() {
             <ul className="skills-list content-card">
               <li className="skills-item">
                 <div className="title-wrapper">
-                  <h5 className="h5">Web design</h5>
+                  <h5 className="h5 mb-0">Website</h5>
                   <data value="80">80%</data>
                 </div>
 
@@ -403,34 +397,34 @@ function App() {
 
               <li className="skills-item">
                 <div className="title-wrapper">
-                  <h5 className="h5">Graphic design</h5>
-                  <data value="70">70%</data>
+                  <h5 className="h5 mb-0">Web Application</h5>
+                  <data value="60">60%</data>
                 </div>
 
                 <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "70%" }}></div>
+                  <div className="skill-progress-fill" style={{ width: "60%" }}></div>
                 </div>
               </li>
 
               <li className="skills-item">
                 <div className="title-wrapper">
-                  <h5 className="h5">Branding</h5>
-                  <data value="90">90%</data>
-                </div>
-
-                <div className="skill-progress-bg">
-                  <div className="skill-progress-fill" style={{ width: "90%" }}></div>
-                </div>
-              </li>
-
-              <li className="skills-item">
-                <div className="title-wrapper">
-                  <h5 className="h5">WordPress</h5>
+                  <h5 className="h5 mb-0">Mobile Application</h5>
                   <data value="50">50%</data>
                 </div>
 
                 <div className="skill-progress-bg">
                   <div className="skill-progress-fill" style={{ width: "50%" }}></div>
+                </div>
+              </li>
+
+              <li className="skills-item">
+                <div className="title-wrapper">
+                  <h5 className="h5 mb-0">UI/ UX</h5>
+                  <data value="70">70%</data>
+                </div>
+
+                <div className="skill-progress-bg">
+                  <div className="skill-progress-fill" style={{ width: "70%" }}></div>
                 </div>
               </li>
             </ul>
@@ -456,25 +450,25 @@ function App() {
             <ol className="timeline-list">
               <li className="timeline-item">
                 <h4 className="h4 timeline-item-title">
-                BSc (Hons) Business Computing and Information System
+                  BSc (Hons) Business Computing and Information System
                 </h4>
 
                 <span>2024 — 2025</span>
 
                 <p className="timeline-text">
-                University of Central Lancashire
+                  University of Central Lancashire
                 </p>
               </li>
 
               <li className="timeline-item">
                 <h4 className="h4 timeline-item-title">
-                NCC Diploma in Computing (with Business Management)
+                  NCC Diploma in Computing (with Business Management)
                 </h4>
 
                 <span>2021 — 2024</span>
 
                 <p className="timeline-text">
-                Strategy First University College
+                  Strategy First University College
                 </p>
               </li>
             </ol>
@@ -498,7 +492,7 @@ function App() {
                 <span>2023 — 2025</span>
 
                 <p className="timeline-text">
-                Enrich Insights Consulting Services Co., Ltd
+                  Enrich Insights Consulting Services Co., Ltd
                 </p>
               </li>
             </ol>
@@ -507,7 +501,7 @@ function App() {
           <section className="timeline">
             <div className="title-wrapper">
               <div className="icon-box">
-              <VscSymbolEvent />
+                <VscSymbolEvent />
               </div>
 
               <h3 className="h3">Activities</h3>
@@ -516,25 +510,25 @@ function App() {
             <ol className="timeline-list">
               <li className="timeline-item">
                 <h4 className="h4 timeline-item-title">
-                Samsung AI Hackathon 
+                  Samsung AI Hackathon
                 </h4>
 
                 <span>2024 — 2025</span>
 
                 <p className="timeline-text">
-                Samsung Innovation Campus
+                  Samsung Innovation Campus
                 </p>
               </li>
 
               <li className="timeline-item">
                 <h4 className="h4 timeline-item-title">
-                Strategy First's Mobile Application Plan Competition 2024
+                  Strategy First's Mobile Application Plan Competition 2024
                 </h4>
 
                 <span>2024 — 2025</span>
 
                 <p className="timeline-text">
-                Strategy First University College
+                  Strategy First University College
                 </p>
               </li>
             </ol>
@@ -543,8 +537,8 @@ function App() {
         </article>
 
       </div>
-      <MouseGlow />
 
+      <MouseGlow />
     </main>
   );
 }
