@@ -32,7 +32,6 @@ import phpIcon from "./assets/images/icons/php.svg"
 import laravelIcon from "./assets/images/icons/laravel.svg"
 import pythonIcon from "./assets/images/icons/python.svg"
 import djangoIcon from "./assets/images/icons/django.svg"
-import figmaIcon from "./assets/images/icons/figma.svg"
 
 // Images
 import antiProcrastImage from './assets/images/portfolios/anti_procrast_black.png';
