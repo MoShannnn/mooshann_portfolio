@@ -134,9 +134,9 @@ function Sidebar() {
               </div>
 
               <div className="contact-info text-start">
-                <p className="contact-title">Birthday</p>
+                <p className="contact-title">Year</p>
 
-                <time dateTime="2004-02-6">Feb 6, 2004</time>
+                <time dateTime="2004-02-6">2004</time>
               </div>
             </li>
 
