@@ -539,9 +539,6 @@ function App() {
       </div>
 
       <MouseGlow />
-
-      <SpeedInsights />
-
     </main>
   );
 }
