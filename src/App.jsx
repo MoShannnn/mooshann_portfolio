@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import "./assets/css/style.css";
 import "./App.css";
 import "./index.css";
@@ -539,6 +539,8 @@ function App() {
       </div>
 
       <MouseGlow />
+
+      <SpeedInsights/ >
     </main>
   );
 }
