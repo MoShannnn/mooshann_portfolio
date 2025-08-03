@@ -222,7 +222,7 @@ function App() {
           {/* Service */}
 
           <section className="service">
-            <h3 className="h3 service-title">What i'm doing</h3>
+            <h3 className="h3 service-title">What I&apos;m doing</h3>
 
             <ul className="service-list">
               <li className="service-item">
