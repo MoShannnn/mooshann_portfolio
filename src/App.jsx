@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import "./assets/css/style.css";
 import "./App.css";
@@ -363,7 +363,7 @@ function App() {
           <section className="blog-posts">
             <ul className="blog-posts-list">
               {skills.map((skill) => (
-                <li className="blog-post-item">
+                <li className="blog-post-item" key={skill.name}>
                   <a className="d-flex flex-col justify-content-center align-items-center py-3" href="#">
                     <img
                       src={skill.image}
