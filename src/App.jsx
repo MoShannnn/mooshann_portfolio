@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./assets/css/style.css";
 import "./App.css";
 import "./index.css";
