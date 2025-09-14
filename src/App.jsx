@@ -50,6 +50,15 @@ function App() {
 
   const [activeCategory, setActiveCategory] = useState("all");
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClick = (e, project) => {
+    if (project.url === "private") {
+      e.preventDefault();
+      setShowModal(true);
+    }
+  };
+
   //data
 
   const pages = ["about", "portfolio", "skills", 'resume'];
@@ -61,54 +70,63 @@ function App() {
       'name': 'FocusFlow Anti-Procrast Web App',
       'image': antiProcrastImage,
       'language': 'Vue, Laravel, Shadcn, Filament',
+      'url': 'https://github.com/MoShannnn/FocusFlowAntiProcrastWebApp',
       'categories': ['web application'],
     },
     {
       'name': 'Tempo Ticket Booking',
       'image': ticketBookingImage,
       'language': 'Bootstrap, Laravel, Fiament',
+      'url': 'https://github.com/MoShannnn/TempoTicketBookingSystem',
       'categories': ['web application'],
     },
     {
       'name': 'AI Personal Color Detect',
       'image': trueColor,
       'language': 'GPT API, Python, Django, Tailwlind',
+      'url': 'https://github.com/MoShannnn/color',
       'categories': ['web application'],
     },
     {
       'name': 'iApprove',
       'image': iApprove,
       'language': 'JQuery, AJAX, Laravel',
+      'url': 'private',
       'categories': ['web application'],
     },
     {
       'name': 'BakerBakes Food Delivery',
       'image': foodDelivery,
       'language': 'Bootstrap, PHP, SQL',
+      'url': 'https://github.com/MoShannnn/BakerBakesFoodDelivery',
       'categories': ['web application'],
     },
     {
       'name': 'London Website',
       'image': londonWebsite,
       'language': 'Javascript, Bootstrap',
+      'url': 'https://github.com/MoShannnn/London_Website',
       'categories': ['website'],
     },
     {
       'name': 'Language Center Website',
       'image': helloChineseWebsite,
       'language': 'Bootstrap, Laravel and Filament',
+      'url': 'https://hellochinese.site/',
       'categories': ['website'],
     },
     {
       'name': 'Digital Stamp',
       'image': digitalStamp,
-      'language': 'React Native and NativeWind',
+      'language': 'UI Design and React Native',
+      'url': 'private',
       'categories': ['mobile application', 'figma'],
     },
     {
       'name': 'Tutor Link',
       'image': tutorLink,
       'language': 'UI Design for Searching Local Guide.',
+      'url': 'https://www.figma.com/design/aG90osqcD6FVpmhMeKocFa/Tutor-Link?node-id=0-1&p=f&t=Q8pmJreJnDCefTud-0',
       'categories': ['figma'],
     },
 
@@ -214,8 +232,8 @@ function App() {
             <p>
               Beyond my professional experience, I am committed to continuous growth and lifelong learning
               by regularly immersing myself in personal projects, online courses, and technology activities
-              to sharpen my skills. I am deeply interested in the business strategy that
-              drives technology impact on efficiency and growth.
+              to sharpen my skills. I am deeply interested in the how technology can
+              drives Business growth and efficient.
             </p>
           </section>
 
@@ -332,7 +350,9 @@ function App() {
                   data-filter-item
                   key={index}
                 >
-                  <a href="#">
+                  <a href={project.url && project.url !== "private" ? project.url : "#"}
+                    target={project.url && project.url !== "private" ? "_blank" : "_self"}
+                    onClick={(e) => handleClick(e, project)}>
                     <figure className="project-img">
                       <div className="project-item-icon-box">
                         <IoEyeOutline />
@@ -352,6 +372,23 @@ function App() {
             </ul>
           </section>
         </article>
+
+        {/* Modal */}
+        {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm w-full text-center">
+              <p className="text-gray-800 mb-4 font-medium">
+                Sorry, this is a private project, cannot share.
+              </p>
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition mx-auto"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Skills */}
 
@@ -540,7 +577,7 @@ function App() {
 
       <MouseGlow />
 
-      <SpeedInsights/ >
+      <SpeedInsights />
     </main>
   );
 }
