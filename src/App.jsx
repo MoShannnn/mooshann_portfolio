@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 import "./assets/css/style.css";
 import "./App.css";
 import "./index.css";
@@ -576,7 +576,7 @@ function App() {
       </div>
 
       <MouseGlow />
-      
+
       <Analytics />
     </main>
   );
