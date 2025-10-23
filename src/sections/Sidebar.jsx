@@ -36,7 +36,7 @@ function Sidebar() {
               Mo Shan
             </h1>
 
-            <p className="title">Full Stack Developer</p>
+            <p className="title">Software Engineer</p>
           </div>
 
           <ul className="social-list">
@@ -121,7 +121,7 @@ function Sidebar() {
                 <p className="contact-title">Phone</p>
 
                 <a href="tel:+959751026316" className="contact-link">
-                  +959 751026316
+                  +65 92312126
                 </a>
               </div>
             </li>
@@ -150,7 +150,7 @@ function Sidebar() {
               <div className="contact-info text-start">
                 <p className="contact-title">Location</p>
 
-                <address>Yangon</address>
+                <address>Singapore</address>
               </div>
             </li>
           </ul>

@@ -76,7 +76,7 @@ function App() {
     {
       'name': 'Tempo Ticket Booking',
       'image': ticketBookingImage,
-      'language': 'Bootstrap, Laravel, Fiament',
+      'language': 'Bootstrap, Laravel, Filament',
       'url': 'https://github.com/MoShannnn/TempoTicketBookingSystem',
       'categories': ['web application'],
     },
@@ -225,7 +225,7 @@ function App() {
 
           <section className="about-text">
             <p>
-              A passionate Full Stack Developer committed to gaining knowledge, skills, and experience.
+              A passionate Software Engineer committed to gaining knowledge, skills, and experience.
               Experienced in web and mobile application development, as well as UI/UX design using Figma.
             </p>
 
